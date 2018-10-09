@@ -24,8 +24,7 @@ if (answerTwo === 'yes' || answerTwo === 'y'){
     numCorrect++;
 } else {
     alert('Wrong, I love card games');
-    console.log('The user got question 2 wrong');
-    
+    console.log('The user got question 2 wrong');   
 }
 
 var answerThree = prompt('Do I like cheese').toLowerCase();
@@ -43,17 +42,16 @@ if (answerFour === 'yes' || answerFour === 'y'){
     alert('Correct, I have a cat named Ned');
     console.log('The user got question 4 correct');
     numCorrect++;
-
 } else {
     alert('Wrong, I have a cat named Ned');
     console.log('The user got question 4 wrong');
 }
+
 var answerFive = prompt('Do I eat other people?').toLowerCase();
 if (answerFive === 'no'|| answerFive === 'n'){
     alert('Despite what others say, you\'re correct. I do NOT eat other people');
     console.log('The user got question 5 correct');
     numCorrect++;
-
 } else {
     alert('You\'re incorrect, and that\'s very hurtful :(');
     console.log('The user got question 5 wrong');
