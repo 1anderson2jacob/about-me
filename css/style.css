@@ -2,3 +2,11 @@ body{
     background: paleturquoise;
     color: gray;
 }
+h1{
+    height: 100px;
+    color: black;
+    background: forestgreen;
+}
+span{
+    color: red;
+}
