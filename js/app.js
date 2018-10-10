@@ -6,55 +6,94 @@ var username = prompt('What is your name?');
 
 alert('Welcome, ' + username + '! Let\'s get started!');
 
+var gameQs = [];
+gameQs.push(['Do I have more than 3 pets?','n']);
+gameQs.push(['Do I like to play cards?','y']);
+gameQs.push(['Do I like cheese','y']);
+gameQs.push(['Do I have a cat named \'Ned\'?','y']);
+gameQs.push(['Do I eat other people?','n']);
 
-var answerOne = prompt('Do I have more than 3 pets?').toLowerCase();
-if (answerOne === 'no'|| answerOne === 'n'){
-  alert('Correct, I only have 2 pets');
-  console.log('The user got question 1 correct');
-  numCorrect++;
-} else {
-  alert('Wrong, I only have 2 pets');
-  console.log('The user got question 1 wrong');
+var rightAnswers = [];
+rightAnswers.push('Correct, I only have 2 pets');
+rightAnswers.push('Correct, I love card games');
+rightAnswers.push('Correct, I love cheese');
+rightAnswers.push('Correct, I have a cat named Ned');
+rightAnswers.push('Despite what others say, you\'re correct. I do NOT eat other people');
+
+var wrongAnswers = [];
+wrongAnswers.push('Wrong, I only have 2 pets');
+wrongAnswers.push('Wrong, I love card games');
+wrongAnswers.push('You couldn\'t be more wrong, I love cheese');
+wrongAnswers.push('Wrong, I have a cat named Ned');
+wrongAnswers.push('You\'re incorrect, and that\'s very hurtful :(');
+
+for (var i = 0; i < gameQs.length; i++) {
+
+  var answer = prompt(gameQs[i][0]).toLowerCase();
+
+  if (gameQs[i][1] === 'y') { //questions whose correct answer is yes
+
+    if (answer === 'yes' || answer === 'y') { //user answered correctly
+      alert(rightAnswers[i]);
+      var o = i + 1;
+      console.log('The user got question ' + o + ' correct');
+      numCorrect++;
+    } else { // user answered incorrectly
+      alert(wrongAnswers[i]);
+      console.log('The user got question ' + o + ' incorrect');
+    }
+
+  } else { //questions whose correct answer is no
+
+    if (answer === 'no' || answer === 'n') { //user answered correctly
+      alert(rightAnswers[i]);
+      console.log('The user got question ' + o + ' correct');
+      numCorrect++;
+    } else { // user answered incorrectly
+      alert(wrongAnswers[i]);
+      console.log('The user got question ' + o + ' incorrect');
+    }
+  }
 }
 
-var answerTwo = prompt('Do I like to play cards?').toLowerCase();
-if (answerTwo === 'yes' || answerTwo === 'y'){
-  alert('Correct, I love card games');
-  console.log('The user got question 2 correct');
-  numCorrect++;
-} else {
-  alert('Wrong, I love card games');
-  console.log('The user got question 2 wrong');
+var numGuesses = 4;
+var right = false;
+while(numGuesses > 0 && right === false) { // question 6
+  answer = parseInt(prompt('How old am I?'));
+  if (answer === 27) {
+    alert('Correct, I am 27 years old');
+    numCorrect++;
+    right = true;
+    console.log('The user got question 6 correct');
+  } else if (answer < 27) {
+    numGuesses--;
+    alert('Incorrect, your answer is too low, you have ' + numGuesses + ' guesses left')
+    console.log('The user got question 6 incorrect');
+  } else {
+    numGuesses--;
+    alert('Incorrect, your answer is too high, you have ' + numGuesses + ' guesses left')
+    console.log('The user got question 6 incorrect');
+  }
 }
 
-var answerThree = prompt('Do I like cheese').toLowerCase();
-if (answerThree === 'yes' || answerThree === 'y'){
-  alert('Correct, I love cheese');
-  console.log('The user got question 3 correct');
-  numCorrect++;
-} else {
-  alert('You couldn\'t be more wrong, I love cheese');
-  console.log('The user got question 3 wrong');
+var states = ['california','oregon','idaho'];
+numGuesses = 6;
+right = false;
+while(numGuesses > 0 && right === false) { //question 7
+  answer = prompt('What states have I been to other than Washington?').toLowerCase();
+  if (answer === states[0] || answer === states[1] || answer === states[2]) {
+    alert('Correct! I\'ve been to ' + answer);
+    numCorrect++
+    right = true;
+    console.log('The user got question 7 correct');
+  } else {
+    numGuesses--;
+    alert('Wrong! I\'ve never been to ' + answer + ', you have ' + numGuesses + ' guesses left');
+    console.log('The user got question 7 incorrect');
+  }
 }
 
-var answerFour = prompt('Do I have a cat named \'Ned\'?').toLowerCase();
-if (answerFour === 'yes' || answerFour === 'y'){
-  alert('Correct, I have a cat named Ned');
-  console.log('The user got question 4 correct');
-  numCorrect++;
-} else {
-  alert('Wrong, I have a cat named Ned');
-  console.log('The user got question 4 wrong');
-}
 
-var answerFive = prompt('Do I eat other people?').toLowerCase();
-if (answerFive === 'no'|| answerFive === 'n'){
-  alert('Despite what others say, you\'re correct. I do NOT eat other people');
-  console.log('The user got question 5 correct');
-  numCorrect++;
-} else {
-  alert('You\'re incorrect, and that\'s very hurtful :(');
-  console.log('The user got question 5 wrong');
-}
 
 alert('You got ' + numCorrect + ' answers correct!');
+
