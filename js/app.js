@@ -24,7 +24,7 @@ if (answerTwo === 'yes' || answerTwo === 'y'){
   numCorrect++;
 } else {
   alert('Wrong, I love card games');
-  console.log('The user got question 2 wrong');   
+  console.log('The user got question 2 wrong');
 }
 
 var answerThree = prompt('Do I like cheese').toLowerCase();
