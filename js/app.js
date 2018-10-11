@@ -94,7 +94,5 @@ while(numGuesses > 0) { //question 7
   }
 }
 
-
-
 alert('You got ' + numCorrect + ' answers correct!');
 
