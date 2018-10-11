@@ -1,12 +1,13 @@
 'use strict';
 
+
 var numCorrect = 0;
 alert('Welcome! Play my guessing game');
 
 var username = prompt('What is your name?');
 
 alert('Welcome, ' + username + '! Let\'s get started!');
-
+function quesFunc1(){
 var gameQs = [];
 gameQs.push(['Do I have more than 3 pets?','n']);
 gameQs.push(['Do I like to play cards?','y']);
@@ -57,6 +58,9 @@ for (var i = 0; i < gameQs.length; i++) {
   }
 }
 
+}
+
+function quesFunc2(){
 var numGuesses = 4;
 
 while(numGuesses > 0) { // question 6
@@ -76,7 +80,9 @@ while(numGuesses > 0) { // question 6
     console.log('The user got question 6 incorrect');
   }
 }
+}
 
+function quesFunc3(){
 var states = ['california','oregon','idaho'];
 numGuesses = 6;
 
@@ -93,6 +99,14 @@ while(numGuesses > 0) { //question 7
     console.log('The user got question 7 incorrect');
   }
 }
+}
+
+function main(){
+  quesFunc1();
+  quesFunc2();
+  quesFunc3();
+}
+main();
 
 alert('You got ' + numCorrect + ' answers correct!');
 
