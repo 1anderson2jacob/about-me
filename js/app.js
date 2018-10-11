@@ -27,16 +27,16 @@ wrongAnswers.push('Wrong, I love card games');
 wrongAnswers.push('You couldn\'t be more wrong, I love cheese');
 wrongAnswers.push('Wrong, I have a cat named Ned');
 wrongAnswers.push('You\'re incorrect, and that\'s very hurtful :(');
+var o = 0;
 
 for (var i = 0; i < gameQs.length; i++) {
 
   var answer = prompt(gameQs[i][0]).toLowerCase();
-
+  o = i + 1;
   if (gameQs[i][1] === 'y') { //questions whose correct answer is yes
 
     if (answer === 'yes' || answer === 'y') { //user answered correctly
       alert(rightAnswers[i]);
-      var o = i + 1;
       console.log('The user got question ' + o + ' correct');
       numCorrect++;
     } else { // user answered incorrectly
