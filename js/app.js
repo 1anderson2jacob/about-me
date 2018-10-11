@@ -1,4 +1,5 @@
 'use strict';
+/*
 var numCorrect = 0;
 alert('Welcome! Play my guessing game');
 
@@ -97,3 +98,4 @@ while(numGuesses > 0) { //question 7
 
 alert('You got ' + numCorrect + ' answers correct!');
 
+*/
