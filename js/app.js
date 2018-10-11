@@ -57,13 +57,13 @@ for (var i = 0; i < gameQs.length; i++) {
 }
 
 var numGuesses = 4;
-var right = false;
-while(numGuesses > 0 && right === false) { // question 6
+
+while(numGuesses > 0) { // question 6
   answer = parseInt(prompt('How old am I?'));
   if (answer === 27) {
     alert('Correct, I am 27 years old');
     numCorrect++;
-    right = true;
+    numGuesses = 0; // end loop
     console.log('The user got question 6 correct');
   } else if (answer < 27) {
     numGuesses--;
@@ -78,13 +78,13 @@ while(numGuesses > 0 && right === false) { // question 6
 
 var states = ['california','oregon','idaho'];
 numGuesses = 6;
-right = false;
-while(numGuesses > 0 && right === false) { //question 7
+
+while(numGuesses > 0) { //question 7
   answer = prompt('What states have I been to other than Washington?').toLowerCase();
   if (answer === states[0] || answer === states[1] || answer === states[2]) {
     alert('Correct! I\'ve been to ' + answer);
     numCorrect++
-    right = true;
+    numGuesses = 0; // end loop
     console.log('The user got question 7 correct');
   } else {
     numGuesses--;
