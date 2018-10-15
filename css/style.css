@@ -28,6 +28,13 @@ ul{
     border-style: solid;
     border-width: 2px;
 }
+ol{
+    width: 200px;
+    position: absolute;
+    border-color: Red yellow Blue Green;
+    border-style: solid;
+    border-width: 2px;
+}
 div {
     width: 204px;
     position: relative;
